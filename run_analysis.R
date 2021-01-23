@@ -1,17 +1,17 @@
 library(dplyr)
 # Load metadata
-activity_labels <- read.table("./data/activity_labels.txt", col.names=c("activity.id", "activity.label"))
-features <- read.table("./data/features.txt", col.names=c("feature.id", "feature.label"))
+activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt", col.names=c("activity.id", "activity.label"))
+features <- read.table("./UCI HAR Dataset/features.txt", col.names=c("feature.id", "feature.label"))
 
 # Load data
 ## 4. Appropriately labels the data set with descriptive variable names. 
-x_train <- read.table("./data/train/X_train.txt", col.names=features$feature.label)
-y_train <- read.table("./data/train/y_train.txt")
-subject_train <- read.table("./data/train/subject_train.txt", col.names=c("subject"))
+x_train <- read.table("./UCI HAR Dataset/train/X_train.txt", col.names=features$feature.label)
+y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
+subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt", col.names=c("subject"))
 
-x_test <- read.table("./data/test/X_test.txt", col.names=features$feature.label)
-y_test <- read.table("./data/test/y_test.txt")
-subject_test <- read.table("./data/test/subject_test.txt", col.names=c("subject"))
+x_test <- read.table("./UCI HAR Dataset/test/X_test.txt", col.names=features$feature.label)
+y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
+subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt", col.names=c("subject"))
 
 # Merge data
 ## 1. Merges the training and the test sets to create one data set.
